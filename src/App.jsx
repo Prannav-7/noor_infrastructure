@@ -26,7 +26,7 @@ function Navbar() {
           <div className="logo-icon">NI</div>
           <div className="logo-text">
             <span className="company-name">Noor Infrastructure</span>
-            <span className="company-tag">Building Tomorrow</span>
+            <span className="company-tag">Chennai, Tamil Nadu</span>
           </div>
         </div>
 
@@ -67,7 +67,7 @@ function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-bg">
-        <img src="/hero.png" alt="Noor Infrastructure hero" />
+        <img src="/hero.png" alt="Noor Infrastructure construction site Chennai" />
         <div className="hero-bg-overlay"></div>
         <div className="hero-grid-overlay"></div>
       </div>
@@ -75,21 +75,21 @@ function Hero() {
       <div className="container hero-content">
         <div className="hero-content-inner">
           <div className="badge hero-badge">
-            <span>⚡</span>
-            Award-Winning Infrastructure Company
+            <span>🏠</span>
+            Trusted Builder in Chennai
           </div>
 
           <h1 className="hero-title">
-            Building Tomorrow's{' '}
-            <span className="gradient-text">Infrastructure</span>
+            Your Dream Home,{' '}
+            <span className="gradient-text">Built Right</span>
             <br />
-            Today
+            in Chennai
           </h1>
 
           <p className="hero-subtitle">
-            Noor Infrastructure delivers world-class civil engineering and construction
-            projects across highways, buildings, bridges, and utilities — with unrivalled
-            precision and an unwavering commitment to excellence.
+            Noor Infrastructure specialises in building quality houses, renovations,
+            and small commercial shops across Chennai. Honest pricing,
+            skilled workmanship, and on-time delivery — every time.
           </p>
 
           <div className="hero-buttons">
@@ -98,7 +98,7 @@ function Hero() {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               id="hero-explore-btn"
             >
-              Explore Projects →
+              View Our Work →
             </button>
             <button
               className="btn-outline"
@@ -111,10 +111,10 @@ function Hero() {
 
           <div className="hero-stats">
             {[
-              { value: '250+', label: 'Projects Completed' },
-              { value: '18+', label: 'Years Experience' },
-              { value: '₹500Cr+', label: 'Project Value' },
-              { value: '40+', label: 'Awards Won' },
+              { value: '150+', label: 'Homes Built' },
+              { value: '10+', label: 'Years in Chennai' },
+              { value: '500+', label: 'Happy Families' },
+              { value: '4.9★', label: 'Client Rating' },
             ].map((s, i) => (
               <div className="stat-item" key={i}>
                 <span className="stat-value">{s.value}</span>
@@ -154,16 +154,16 @@ function About() {
       <div className="container">
         <div className="about-grid">
           <div className={`about-image-wrapper ${visible ? 'visible' : ''}`}>
-            <img src="/about.png" alt="Noor Infrastructure team at work" className="about-img-main" />
+            <img src="/about.png" alt="Noor Infrastructure team with homeowners" className="about-img-main" />
             <div className="about-img-accent">
-              <span className="accent-number">18+</span>
-              <span className="accent-text">Years of Excellence</span>
+              <span className="accent-number">10+</span>
+              <span className="accent-text">Years of Trust</span>
             </div>
             <div className="about-badge-float">
-              <div className="float-icon">🏆</div>
+              <div className="float-icon">🏅</div>
               <div className="float-text">
-                <strong>ISO 9001:2015</strong>
-                <span>Certified Company</span>
+                <strong>RERA Registered</strong>
+                <span>Licensed Contractor</span>
               </div>
             </div>
           </div>
@@ -171,31 +171,31 @@ function About() {
           <div className="about-content">
             <div className="badge">🏗️ &nbsp;About Noor Infrastructure</div>
             <h2>
-              Engineering Excellence Since{' '}
-              <span className="gradient-text">2006</span>
+              Building Chennai Homes{' '}
+              <span className="gradient-text">Since 2014</span>
             </h2>
             <p className="lead-text">
-              Noor Infrastructure Private Limited is a premier civil engineering and construction
-              firm headquartered in India. We specialize in delivering complex infrastructure
-              projects with precision, safety, and sustainability at our core.
+              We are a Chennai-based construction company specialising in residential houses
+              and small commercial shops. From foundation to finishing, we handle every stage
+              of your build — so you can relax and watch your dream come to life.
             </p>
 
             <div className="about-features">
               {[
                 {
+                  icon: '💰',
+                  title: 'Transparent Pricing',
+                  desc: 'No hidden costs. We give you a clear, detailed estimate before work begins.',
+                },
+                {
                   icon: '🛡️',
-                  title: 'Safety First Culture',
-                  desc: 'Zero-compromise safety protocols across all our project sites with industry-leading standards.',
+                  title: 'Quality Materials',
+                  desc: 'We use branded cement, TMT steel, and quality tiles — verified for every project.',
                 },
                 {
-                  icon: '🌱',
-                  title: 'Sustainable Practices',
-                  desc: 'Green-certified construction methods minimizing environmental impact and carbon footprint.',
-                },
-                {
-                  icon: '🔬',
-                  title: 'Advanced Technology',
-                  desc: 'Using BIM, drone surveys, and AI-assisted project management for superior outcomes.',
+                  icon: '📅',
+                  title: 'On-Time Handover',
+                  desc: 'We commit to timelines and keep you updated throughout the construction.',
                 },
               ].map((f, i) => (
                 <div className="feature-item" key={i}>
@@ -227,46 +227,46 @@ function About() {
    ============================================================ */
 const services = [
   {
-    icon: '🏗️',
+    icon: '🏠',
     iconClass: 'gold-bg',
-    title: 'Civil & Structural Engineering',
-    desc: 'Complete civil engineering solutions from design to execution for commercial, residential, and industrial structures.',
-    list: ['Structural Design', 'Foundation Engineering', 'Seismic Analysis', 'Load Calculations'],
+    title: 'New House Construction',
+    desc: 'Complete construction of your new home — from design and foundation all the way to finishing and handover.',
+    list: ['Plan & Design Help', 'Foundation & Structure', 'Brick Work & Plastering', 'Roofing & Waterproofing'],
   },
   {
-    icon: '🛣️',
+    icon: '🔨',
     iconClass: 'teal-bg',
-    title: 'Highway & Road Construction',
-    desc: 'World-class highway and expressway development including national highways and state road projects.',
-    list: ['Expressways', 'Flyovers & Bridges', 'Road Widening', 'Traffic Engineering'],
+    title: 'Home Renovation',
+    desc: 'Give your existing home a fresh new look. We renovate kitchens, bathrooms, bedrooms and full interiors.',
+    list: ['Kitchen Renovation', 'Bathroom Tiling', 'Flooring & Painting', 'False Ceiling / LED'],
   },
   {
-    icon: '🏢',
+    icon: '🏪',
     iconClass: 'blue-bg',
-    title: 'Commercial Building Projects',
-    desc: 'Premium commercial complexes, corporate campuses, and large-scale mixed-use developments.',
-    list: ['Office Complexes', 'Shopping Malls', 'Industrial Parks', 'IT Campuses'],
+    title: 'Shop & Commercial Build',
+    desc: 'We build small shops, office spaces, and commercial units with quality finish and fast turnaround.',
+    list: ['Shop Front Build', 'Interior Fit-out', 'Electrical & Plumbing', 'Signboard & Shutters'],
   },
   {
     icon: '💧',
     iconClass: 'teal-bg',
-    title: 'Water & Utilities Infrastructure',
-    desc: 'Comprehensive water supply, sewage, and utility infrastructure for urban and rural development.',
-    list: ['Water Treatment Plants', 'Pipeline Networks', 'Sewage Systems', 'Pump Stations'],
+    title: 'Plumbing & Electrical',
+    desc: 'Licensed plumbing and electrical work done safely and to Chennai Corporation standards.',
+    list: ['Water Lines & Tanks', 'Drainage & Sewage', 'Electrical Wiring', 'Switchboards & Fixtures'],
   },
   {
-    icon: '🌉',
+    icon: '🎨',
     iconClass: 'gold-bg',
-    title: 'Bridges & Elevated Structures',
-    desc: 'Engineering and constructing robust bridges, viaducts, and elevated corridors to modern standards.',
-    list: ['Cable-Stayed Bridges', 'Box Girder Bridges', 'Pedestrian Bridges', 'Metro Viaducts'],
+    title: 'Painting & Finishing',
+    desc: 'Interior and exterior painting using branded paints with smooth, long-lasting finish.',
+    list: ['Interior Emulsion', 'Exterior Texture Paint', 'Primer & Putty Work', 'Wood Polishing'],
   },
   {
-    icon: '⚡',
+    icon: '🧱',
     iconClass: 'blue-bg',
-    title: 'Project Management & PMC',
-    desc: 'End-to-end project management consultancy ensuring on-time, on-budget delivery for complex projects.',
-    list: ['PMC Services', 'Quality Assurance', 'Procurement Management', 'Risk Analysis'],
+    title: 'Extensions & Add-ons',
+    desc: 'Need an extra room, terrace cover, or compound wall? We handle all types of additions and extensions.',
+    list: ['Room Extension', 'Terrace / Portico', 'Compound Wall', 'Staircase Build'],
   },
 ]
 
@@ -280,12 +280,13 @@ function Services() {
         <div className="section-header">
           <div className="badge">⚙️ &nbsp;Our Services</div>
           <h2>
-            Comprehensive <span className="gradient-text">Infrastructure</span> Solutions
+            Everything You Need to{' '}
+            <span className="gradient-text">Build & Renovate</span>
           </h2>
           <div className="divider-line"></div>
           <p>
-            From concept to completion, we deliver the full spectrum of infrastructure services
-            with cutting-edge technology and unmatched expertise.
+            From a new house to a small shop renovation — we cover all construction
+            and finishing services right here in Chennai.
           </p>
         </div>
 
@@ -314,27 +315,27 @@ function Services() {
 const projects = [
   {
     img: '/project1.png',
-    tag: 'Highway',
-    title: 'NH-44 Six-Lane Expressway',
-    desc: 'Widening and modernization of 82 km of national highway with smart traffic management systems.',
-    location: 'Rajasthan',
-    value: '₹420 Cr',
+    tag: 'Residential',
+    title: 'Double-Storey House — Velachery',
+    desc: 'New 1800 sqft two-storey house built with premium materials. Completed in 9 months, handed over on time.',
+    location: 'Velachery, Chennai',
+    value: '₹38 Lakhs',
   },
   {
     img: '/project2.png',
     tag: 'Commercial',
-    title: 'TechPark One — Hyderabad',
-    desc: 'A 1.2 million sqft integrated IT campus with LEED Platinum green building certification.',
-    location: 'Hyderabad',
-    value: '₹280 Cr',
+    title: 'Retail Shop Complex — Tambaram',
+    desc: '4-unit commercial shop row with modern front elevation, shutters, and interior tile work.',
+    location: 'Tambaram, Chennai',
+    value: '₹14 Lakhs',
   },
   {
     img: '/project3.png',
-    tag: 'Utilities',
-    title: 'Smart Water Grid — Pune',
-    desc: '340 km water pipeline network serving 1.8 million residents with IoT monitoring systems.',
-    location: 'Pune',
-    value: '₹190 Cr',
+    tag: 'Renovation',
+    title: 'Full Home Renovation — Porur',
+    desc: 'Complete interior renovation — flooring, false ceiling, paint, kitchen and bathroom makeover.',
+    location: 'Porur, Chennai',
+    value: '₹8 Lakhs',
   },
 ]
 
@@ -345,12 +346,12 @@ function Projects() {
         <div className="section-header">
           <div className="badge">📁 &nbsp;Our Projects</div>
           <h2>
-            Landmark <span className="gradient-text">Projects</span> That Define Us
+            Work We're <span className="gradient-text">Proud Of</span>
           </h2>
           <div className="divider-line"></div>
           <p>
-            Each project represents our commitment to quality, innovation, and lasting impact
-            on communities across India.
+            Real projects, real families. A glimpse into the homes and shops
+            we've built across Chennai.
           </p>
         </div>
 
@@ -431,10 +432,10 @@ function Stats() {
       <div className="container">
         <div className="stats-grid">
           {[
-            { icon: '🏗️', end: 250, suffix: '+', label: 'Projects Completed' },
-            { icon: '👷', end: 1200, suffix: '+', label: 'Skilled Professionals' },
-            { icon: '🌍', end: 18, suffix: '+', label: 'States Operating' },
-            { icon: '🏆', end: 40, suffix: '+', label: 'Industry Awards' },
+            { icon: '🏠', end: 150, suffix: '+', label: 'Houses Built' },
+            { icon: '🏪', end: 80, suffix: '+', label: 'Shops Constructed' },
+            { icon: '😊', end: 500, suffix: '+', label: 'Happy Clients' },
+            { icon: '📍', end: 10, suffix: '+', label: 'Years in Chennai' },
           ].map((s, i) => (
             <div className="stat-card" key={i} id={`stat-card-${i + 1}`}>
               <span className="stat-icon">{s.icon}</span>
@@ -459,35 +460,36 @@ function WhyUs() {
           <div className="why-us-content">
             <div className="badge">⭐ &nbsp;Why Choose Us</div>
             <h2>
-              Your Trusted Partner in{' '}
-              <span className="gradient-text">World-Class Construction</span>
+              Chennai Families{' '}
+              <span className="gradient-text">Trust Noor</span>
             </h2>
             <p className="lead-text">
-              With 18+ years of field expertise, we've earned a reputation for delivering on
-              our promises — on time, within budget, and beyond expectations.
+              We're not a big corporate firm — we're a local Chennai team that cares about
+              every client's home like it's our own. Here's why our customers keep coming
+              back and referring us to their neighbours.
             </p>
 
             <div className="why-list">
               {[
                 {
-                  icon: '⏱️',
-                  title: 'On-Time Delivery',
-                  desc: '97% of our projects are delivered on schedule, backed by Gantt-chart-driven project management.',
+                  icon: '💬',
+                  title: 'Direct Communication',
+                  desc: 'Talk directly to the site supervisor and owner — no middlemen, no confusion.',
                 },
                 {
-                  icon: '🔍',
-                  title: 'Rigorous Quality Control',
-                  desc: 'ISO 9001:2015 certified processes with multi-layer QC checks at every project stage.',
+                  icon: '📋',
+                  title: 'Written Agreement',
+                  desc: 'Everything agreed in writing — scope, cost, timeline. No surprises later.',
                 },
                 {
-                  icon: '💡',
-                  title: 'Innovation-Driven',
-                  desc: 'We leverage BIM, AI scheduling, and drone surveys to bring efficiency to every build.',
+                  icon: '🏗️',
+                  title: 'Experienced Local Team',
+                  desc: 'Our masons, plumbers and electricians have 10+ years of Chennai construction experience.',
                 },
                 {
                   icon: '🤝',
-                  title: 'Client Partnership',
-                  desc: 'Transparent reporting, dedicated account managers, and 24/7 site-level communication.',
+                  title: 'After-Work Support',
+                  desc: 'We stand by our work. Any issues after handover — we come back and fix it, no excuses.',
                 },
               ].map((item, i) => (
                 <div className="why-item" key={i} id={`why-item-${i + 1}`}>
@@ -501,7 +503,7 @@ function WhyUs() {
             </div>
 
             <div className="certifications">
-              {['ISO 9001:2015', 'ISO 14001', 'OHSAS 18001', 'LEED Certified'].map((cert) => (
+              {['RERA Registered', 'Licensed Contractor', 'GST Invoices', 'Local Chennai Team'].map((cert) => (
                 <div className="cert-badge" key={cert}>
                   <span>✓</span> {cert}
                 </div>
@@ -512,19 +514,19 @@ function WhyUs() {
           <div className="why-visual">
             <div className="why-grid-visual">
               <div className="why-visual-card v1">
-                <span className="wvc-icon">📊</span>
-                <div className="wvc-number">₹500Cr+</div>
-                <div className="wvc-label">Total Project Value Executed</div>
+                <span className="wvc-icon">🏠</span>
+                <div className="wvc-number">150+</div>
+                <div className="wvc-label">Houses Built in Chennai</div>
               </div>
               <div className="why-visual-card v2">
-                <span className="wvc-icon">🗂️</span>
-                <div className="wvc-number">250+</div>
-                <div className="wvc-label">Projects Delivered</div>
+                <span className="wvc-icon">📍</span>
+                <div className="wvc-number">10+</div>
+                <div className="wvc-label">Years Local Experience</div>
               </div>
               <div className="why-visual-card v3">
                 <span className="wvc-icon">⭐</span>
                 <div className="wvc-number">4.9/5</div>
-                <div className="wvc-label">Client Satisfaction</div>
+                <div className="wvc-label">Google Review Rating</div>
               </div>
             </div>
           </div>
@@ -539,22 +541,22 @@ function WhyUs() {
    ============================================================ */
 const testimonials = [
   {
-    quote: 'Noor Infrastructure delivered our NH-44 widening project 3 months ahead of schedule. Their engineering team\'s technical depth and site management is simply world-class.',
-    name: 'Rajeev Sharma',
-    role: 'Director, NHAI Region-IV',
-    initial: 'RS',
+    quote: 'Noor Infrastructure built our house in Velachery within the budget and time they promised. The quality of work — plastering, tiling, everything — is excellent. Very happy with them!',
+    name: 'Ramesh Kumar',
+    role: 'Homeowner, Velachery',
+    initial: 'RK',
   },
   {
-    quote: 'We\'ve partnered with Noor on 4 major IT campus projects. Their quality standards, communication, and commitment to sustainable construction are unparalleled in the industry.',
-    name: 'Priya Menon',
-    role: 'VP Real Estate, TechCorp India',
-    initial: 'PM',
+    quote: 'I gave them a small shop renovation project in Tambaram. They finished in just 3 weeks and the final result was better than I imagined. Pricing was very fair and transparent.',
+    name: 'Fatima Begum',
+    role: 'Shop Owner, Tambaram',
+    initial: 'FB',
   },
   {
-    quote: 'The water grid project they delivered for Pune Municipal has transformed water supply for nearly 2 million people. Exceptional execution, zero compromises on quality.',
-    name: 'Arun Desai',
-    role: 'Commissioner, Pune Municipal Corp.',
-    initial: 'AD',
+    quote: 'Renovated our entire house in Porur — false ceiling, flooring, paint and bathroom. The team was professional and polite. I will definitely call them again for future work.',
+    name: 'Suresh Anand',
+    role: 'Homeowner, Porur',
+    initial: 'SA',
   },
 ]
 
@@ -565,10 +567,10 @@ function Testimonials() {
         <div className="section-header">
           <div className="badge">💬 &nbsp;Testimonials</div>
           <h2>
-            What Our <span className="gradient-text">Clients Say</span>
+            What Chennai Families <span className="gradient-text">Say About Us</span>
           </h2>
           <div className="divider-line"></div>
-          <p>Trusted by government bodies, corporations, and municipalities across India.</p>
+          <p>Real reviews from real homeowners and shop owners across Chennai.</p>
         </div>
 
         <div className="testimonials-grid">
@@ -596,7 +598,7 @@ function Testimonials() {
    CONTACT SECTION
    ============================================================ */
 function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
+  const [form, setForm] = useState({ name: '', phone: '', area: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
@@ -605,7 +607,7 @@ function Contact() {
     e.preventDefault()
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 4000)
-    setForm({ name: '', email: '', phone: '', service: '', message: '' })
+    setForm({ name: '', phone: '', area: '', service: '', message: '' })
   }
 
   return (
@@ -614,31 +616,32 @@ function Contact() {
         <div className="section-header">
           <div className="badge">📞 &nbsp;Get In Touch</div>
           <h2>
-            Start Your <span className="gradient-text">Project</span> With Us
+            Start Your <span className="gradient-text">Project</span> Today
           </h2>
           <div className="divider-line"></div>
           <p>
-            Tell us about your infrastructure project and our team will get back to you within 24 hours.
+            Tell us about your house or shop project in Chennai — we'll call you back
+            within a few hours with a free estimate.
           </p>
         </div>
 
         <div className="contact-grid">
           <div className="contact-info">
-            <div className="badge">📍 &nbsp;Our Offices</div>
+            <div className="badge">📍 &nbsp;Find Us</div>
             <h2>
-              Let's Build Something <span className="gradient-text">Extraordinary</span>
+              Let's Build Your <span className="gradient-text">Dream Space</span>
             </h2>
             <p className="lead-text">
-              Whether it's a new project inquiry, partnership opportunity, or just a conversation about
-              infrastructure — we'd love to hear from you.
+              We work across all major areas of Chennai. Call us or fill the form and
+              our team will visit your site for a free consultation.
             </p>
 
             <div className="contact-methods">
               {[
-                { icon: '📍', title: 'Headquarters', info: '14th Floor, Noor Tower, Banjara Hills, Hyderabad — 500034' },
-                { icon: '📞', title: 'Phone', info: '+91 40 4567 8900 | +91 98765 43210' },
-                { icon: '✉️', title: 'Email', info: 'info@noorinfrastructure.in | projects@noorinfra.in' },
-                { icon: '⏰', title: 'Working Hours', info: 'Monday – Saturday, 9:00 AM – 6:30 PM IST' },
+                { icon: '📍', title: 'Office Address', info: 'No. 12, Gandhi Nagar, Tambaram West, Chennai – 600 045' },
+                { icon: '📞', title: 'Call / WhatsApp', info: '+91 98412 56789 (Mohammed Noor)' },
+                { icon: '✉️', title: 'Email', info: 'noorinfrastructure.chn@gmail.com' },
+                { icon: '⏰', title: 'We Work', info: 'Monday – Sunday, 8:00 AM – 8:00 PM' },
               ].map((m, i) => (
                 <div className="contact-method" key={i} id={`contact-method-${i + 1}`}>
                   <div className="contact-method-icon">{m.icon}</div>
@@ -656,44 +659,29 @@ function Contact() {
               <div style={{ textAlign: 'center', padding: '60px 0' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '16px' }}>✅</div>
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', marginBottom: '12px', color: 'var(--clr-white)' }}>
-                  Message Received!
+                  We'll Call You Soon!
                 </h3>
                 <p style={{ color: 'var(--clr-gray-400)' }}>
-                  Thank you for reaching out. Our team will contact you within 24 hours.
+                  Thank you for contacting Noor Infrastructure. Our team will call you back within a few hours.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} id="contact-form">
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="name">Your Name</label>
                     <input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Your full name"
+                      placeholder="e.g. Ramesh Kumar"
                       value={form.name}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone / WhatsApp</label>
                     <input
                       id="phone"
                       name="phone"
@@ -701,35 +689,50 @@ function Contact() {
                       placeholder="+91 98765 43210"
                       value={form.phone}
                       onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="area">Area in Chennai</label>
+                    <input
+                      id="area"
+                      name="area"
+                      type="text"
+                      placeholder="e.g. Tambaram, Velachery, Porur"
+                      value={form.area}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="service">Service Required</label>
+                    <label htmlFor="service">Type of Work</label>
                     <select id="service" name="service" value={form.service} onChange={handleChange}>
-                      <option value="">Select a service</option>
-                      <option>Civil & Structural Engineering</option>
-                      <option>Highway & Road Construction</option>
-                      <option>Commercial Building Projects</option>
-                      <option>Water & Utilities Infrastructure</option>
-                      <option>Bridges & Elevated Structures</option>
-                      <option>Project Management (PMC)</option>
+                      <option value="">Select work type</option>
+                      <option>New House Construction</option>
+                      <option>Home Renovation</option>
+                      <option>Shop / Commercial Build</option>
+                      <option>Plumbing & Electrical</option>
+                      <option>Painting & Finishing</option>
+                      <option>Extensions & Add-ons</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Project Details</label>
+                  <label htmlFor="message">Tell Us More</label>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Briefly describe your project scope, location, and timeline..."
+                    placeholder="Describe your project — plot size, number of floors, budget, timeline, etc."
                     value={form.message}
                     onChange={handleChange}
                   ></textarea>
                 </div>
 
                 <button type="submit" className="btn-primary form-submit" id="contact-submit-btn">
-                  Send Enquiry →
+                  Send Free Enquiry →
                 </button>
               </form>
             )}
@@ -759,15 +762,16 @@ function Footer() {
                 <div className="logo-icon">NI</div>
                 <div className="logo-text">
                   <span className="company-name">Noor Infrastructure</span>
-                  <span className="company-tag">Building Tomorrow</span>
+                  <span className="company-tag">Chennai, Tamil Nadu</span>
                 </div>
               </div>
               <p>
-                India's leading infrastructure construction company, delivering world-class
-                projects for over 18 years with engineering excellence and commitment.
+                A trusted local construction company in Chennai, building quality
+                homes and shops for families since 2014. We work with honesty,
+                skill, and care.
               </p>
               <div className="social-links">
-                {['🔗', '💼', '📘', '🐦'].map((icon, i) => (
+                {['📘', '📷', '📞', '💬'].map((icon, i) => (
                   <a className="social-link" key={i} href="#" aria-label={`Social link ${i + 1}`}>
                     {icon}
                   </a>
@@ -793,15 +797,15 @@ function Footer() {
             </div>
 
             <div className="footer-col">
-              <h4>Services</h4>
+              <h4>Our Services</h4>
               <div className="footer-links">
                 {[
-                  'Civil Engineering',
-                  'Highway Construction',
-                  'Commercial Buildings',
-                  'Water Infrastructure',
-                  'Bridge Construction',
-                  'Project Management',
+                  'New House Build',
+                  'Home Renovation',
+                  'Shop Construction',
+                  'Plumbing & Electrical',
+                  'Painting & Finishing',
+                  'Extensions & Add-ons',
                 ].map((s) => (
                   <a key={s} onClick={() => scrollTo('services')} id={`footer-service-${s.replace(/\s+/g, '-').toLowerCase()}`}>
                     → {s}
@@ -813,21 +817,20 @@ function Footer() {
             <div className="footer-col">
               <h4>Contact</h4>
               <div className="footer-links">
-                <a>📍 Hyderabad, India</a>
-                <a>📞 +91 40 4567 8900</a>
-                <a>✉️ info@noorinfra.in</a>
-                <a>⏰ Mon–Sat, 9 AM – 6:30 PM</a>
+                <a>📍 Tambaram West, Chennai</a>
+                <a>📞 +91 98412 56789</a>
+                <a>💬 WhatsApp Us</a>
+                <a>⏰ Mon–Sun, 8 AM – 8 PM</a>
               </div>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Noor Infrastructure Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Noor Infrastructure, Chennai. All rights reserved.</p>
           <div className="footer-bottom-links">
             <a id="footer-privacy">Privacy Policy</a>
             <a id="footer-terms">Terms of Service</a>
-            <a id="footer-sitemap">Sitemap</a>
           </div>
         </div>
       </div>

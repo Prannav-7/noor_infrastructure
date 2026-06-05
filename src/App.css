@@ -202,7 +202,7 @@
 }
 
 .hero-title .highlight {
-  position: relative;
+  position: left;
   display: inline-block;
 }
 
@@ -311,7 +311,7 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -336,10 +336,10 @@
 
 .about-img-accent {
   position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 180px;
-  height: 180px;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
   background: var(--clr-gold-gradient);
   border-radius: 16px;
   display: flex;
@@ -352,35 +352,36 @@
 
 .about-img-accent .accent-number {
   font-family: var(--font-heading);
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--clr-navy-900);
   line-height: 1;
 }
 
 .about-img-accent .accent-text {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--clr-navy-900);
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0 12px;
+  padding: 0 10px;
 }
 
 .about-badge-float {
   position: absolute;
-  top: 30px;
-  right: -20px;
+  top: 20px;
+  left: 20px;
   background: var(--clr-navy-800);
   border: 1px solid rgba(245, 200, 66, 0.2);
   border-radius: 14px;
-  padding: 16px 20px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   gap: 12px;
   box-shadow: var(--shadow-card);
   animation: float 3s ease-in-out infinite;
+  z-index: 2;
 }
 
 .float-icon {
@@ -409,6 +410,7 @@
 
 .about-content .badge {
   margin-bottom: 16px;
+  display: inline-flex;
 }
 
 .about-content h2 {
@@ -745,9 +747,12 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 0;
   position: relative;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .stat-card {
@@ -759,6 +764,10 @@
 }
 
 .stat-card:last-child {
+  border-right: none;
+}
+
+.stat-card:nth-child(2):last-child {
   border-right: none;
 }
 
@@ -908,6 +917,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  align-items: start;
 }
 
 .why-visual-card {
@@ -1089,11 +1099,11 @@
 
 .contact-info h2 {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 800;
   color: var(--clr-white);
-  line-height: 1.2;
-  margin: 16px 0 20px;
+  line-height: 1.25;
+  margin: 14px 0 18px;
 }
 
 .contact-info .lead-text {
@@ -1222,6 +1232,8 @@
   border-radius: 12px;
   font-size: 1rem;
   padding: 16px;
+  box-sizing: border-box;
+  display: flex;
 }
 
 /* ============================================================
@@ -1358,6 +1370,11 @@
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
   .services-grid,
   .projects-grid,
   .testimonials-grid {
@@ -1366,11 +1383,20 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    border-radius: 12px;
   }
 
   .stat-card {
-    border-right: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .stat-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .stat-card:nth-last-child(-n+2) {
+    border-bottom: none;
   }
 
   .footer-grid {
@@ -1381,7 +1407,7 @@
 
 @media (max-width: 768px) {
   :root {
-    --section-padding: 70px 0;
+    --section-padding: 60px 0;
   }
 
   .navbar-links,
@@ -1394,25 +1420,40 @@
   }
 
   .hero-stats {
-    gap: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    min-width: 80px;
   }
 
   .about-grid,
   .why-us-grid,
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 44px;
+  }
+
+  .about-image-wrapper {
+    max-width: 100%;
   }
 
   .about-img-accent {
-    right: 0;
-    bottom: -20px;
-    width: 140px;
-    height: 140px;
+    right: 16px;
+    bottom: 16px;
+    width: 130px;
+    height: 130px;
   }
 
   .about-img-accent .accent-number {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .about-badge-float {
+    top: 16px;
+    left: 16px;
+    padding: 10px 14px;
   }
 
   .services-grid,
@@ -1441,7 +1482,43 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+  }
+
+  .why-grid-visual {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-visual-card.v1 {
+    grid-column: span 2;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
   }
 
   .why-grid-visual {
@@ -1450,5 +1527,9 @@
 
   .why-visual-card.v1 {
     grid-column: span 1;
+  }
+
+  .contact-form {
+    padding: 24px 16px;
   }
 }
