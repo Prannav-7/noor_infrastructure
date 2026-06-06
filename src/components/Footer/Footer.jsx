@@ -39,10 +39,12 @@ export default function Footer() {
             {/* Brand column */}
             <div className="footer-brand">
               <div className="navbar-logo" onClick={() => scrollTo('hero')}>
-                <div className="logo-monogram">NI</div>
+                <div className="logo-img-wrapper">
+                  <img src="/image.png" alt="Noor Infrastructure Logo" className="logo-img-file" />
+                </div>
                 <div className="logo-text-group">
-                  <span className="logo-name">Noor Infrastructure</span>
-                  <span className="logo-sub">Chennai · Est. 2014</span>
+                  <span className="logo-name">Noor</span>
+                  <span className="logo-sub">Infrastructure Works</span>
                 </div>
               </div>
               <p>

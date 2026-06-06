@@ -327,3 +327,60 @@ ul  { list-style: none; }
     font-size: 0.72rem;
   }
 }
+
+/* ============================================================
+   GLOBAL LOGO IMAGE BLENDING & CROPPING (Horizontal Layout)
+   ============================================================ */
+.logo-img-wrapper {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: screen;
+  flex-shrink: 0;
+}
+
+.logo-img-file {
+  position: absolute;
+  width: 110px;
+  height: auto;
+  top: -5px;
+  left: -31px;
+  display: block;
+  filter: invert(1) brightness(0.9) contrast(1.5);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.navbar-logo:hover .logo-img-file {
+  transform: scale(1.05);
+}
+
+/* ── Logo Text styling on the right of the icon ── */
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--clr-white);
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--clr-gold);
+  text-transform: uppercase;
+}
