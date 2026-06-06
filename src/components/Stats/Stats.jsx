@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './Stats.css'
 
 /* ── Animated counter hook ── */
@@ -45,18 +46,20 @@ function AnimatedCounter({ end, suffix = '' }) {
 
 /* ── Data: edit this array to change the stats ── */
 const statsData = [
-  { icon: '🏠', end: 150, suffix: '+', label: 'Houses Built'    },
-  { icon: '🏪', end: 80,  suffix: '+', label: 'Shops Constructed' },
-  { icon: '😊', end: 500, suffix: '+', label: 'Happy Clients'   },
-  { icon: '📍', end: 10,  suffix: '+', label: 'Years in Chennai' },
+  { icon: '✦', end: 150, suffix: '+', label: 'Houses Built'    },
+  { icon: '⬡', end: 80,  suffix: '+', label: 'Shops Constructed' },
+  { icon: '◈', end: 500, suffix: '+', label: 'Happy Clients'   },
+  { icon: '◇', end: 10,  suffix: '+', label: 'Years in Chennai' },
 ]
 
 export default function Stats() {
+  const gridRef = useScrollReveal()
+
   return (
     <section className="stats-section" id="stats">
       <div className="stats-bg"></div>
       <div className="container">
-        <div className="stats-grid">
+        <div className="stats-grid reveal-stagger" ref={gridRef}>
           {statsData.map((s, i) => (
             <div className="stat-card" key={i} id={`stat-card-${i + 1}`}>
               <span className="stat-icon">{s.icon}</span>
@@ -69,3 +72,4 @@ export default function Stats() {
     </section>
   )
 }
+

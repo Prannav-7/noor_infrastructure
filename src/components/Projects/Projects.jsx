@@ -1,3 +1,4 @@
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './Projects.css'
 
 /* ── Data: edit this array to add/remove/change projects ── */
@@ -29,22 +30,26 @@ const projects = [
 ]
 
 export default function Projects() {
+  const headerRef = useScrollReveal()
+  const gridRef = useScrollReveal()
+
   return (
     <section className="projects section" id="projects">
       <div className="container">
-        <div className="section-header">
-          <div className="badge">📁 &nbsp;Our Projects</div>
-          <h2>
-            Work We're <span className="gradient-text">Proud Of</span>
+        <div className="section-header reveal" ref={headerRef}>
+          <p className="eyebrow">Our Projects</p>
+          <h2 className="heading-section">
+            Work We're<br />
+            <em className="gold-text" style={{ fontStyle: 'italic' }}>Proud Of</em>
           </h2>
-          <div className="divider-line"></div>
-          <p>
+          <div className="gold-rule"></div>
+          <p className="sub-text">
             Real projects, real families. A glimpse into the homes and shops
             we've built across Chennai.
           </p>
         </div>
 
-        <div className="projects-grid">
+        <div className="projects-grid reveal-stagger" ref={gridRef}>
           {projects.map((p, i) => (
             <div className="project-card" key={i} id={`project-card-${i + 1}`}>
               <img src={p.img} alt={p.title} className="project-img" />
@@ -70,3 +75,4 @@ export default function Projects() {
     </section>
   )
 }
+

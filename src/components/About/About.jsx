@@ -1,103 +1,85 @@
-import { useEffect, useRef, useState } from 'react'
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './About.css'
 
 const features = [
   {
-    icon: '💰',
+    icon: '◆',
     title: 'Transparent Pricing',
-    desc: 'No hidden costs. We give you a clear, detailed estimate before work begins.',
+    desc: 'Detailed estimate before work begins — no hidden costs, ever.',
   },
   {
-    icon: '🛡️',
-    title: 'Quality Materials',
-    desc: 'We use branded cement, TMT steel, and quality tiles — verified for every project.',
+    icon: '◆',
+    title: 'Premium Materials',
+    desc: 'Branded cement, TMT steel, and quality tiles verified for every project.',
   },
   {
-    icon: '📅',
+    icon: '◆',
     title: 'On-Time Handover',
-    desc: 'We commit to timelines and keep you updated throughout the construction.',
+    desc: 'We commit to timelines and send you weekly progress updates.',
   },
 ]
 
 export default function About() {
-  const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.2 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+  const photoRef  = useScrollReveal()
+  const textRef   = useScrollReveal()
+  const featRef   = useScrollReveal()
 
   return (
-    <section className="about section" id="about" ref={ref}>
-      <div className="container">
-        <div className="about-grid">
+    <section className="about section" id="about">
+      <div className="about-grid">
 
-          {/* Left — photo with floating badges */}
-          <div className={`about-image-wrapper ${visible ? 'visible' : ''}`}>
-            <img
-              src="/about.png"
-              alt="Noor Infrastructure team with homeowners"
-              className="about-img-main"
-            />
-
-            {/* Top-left floating badge */}
-            <div className="about-badge-float">
-              <div className="float-icon">🏅</div>
-              <div className="float-text">
-                <strong>RERA Registered</strong>
-                <span>Licensed Contractor</span>
-              </div>
-            </div>
-
-            {/* Bottom-right accent card */}
-            <div className="about-img-accent">
-              <span className="accent-number">10+</span>
-              <span className="accent-text">Years of Trust</span>
+        {/* Left — Photo */}
+        <div className="about-photo-side reveal from-left" ref={photoRef}>
+          <img src="/about.png" alt="Noor Infrastructure — Chennai homeowner handshake" />
+          <div className="about-photo-overlay" />
+          <div className="about-badge">
+            <span className="about-badge-num">10+</span>
+            <div className="about-badge-label">
+              <strong>Years of Trust</strong>
+              <span>Est. 2014 · Chennai</span>
             </div>
           </div>
+        </div>
 
-          {/* Right — text content */}
-          <div className="about-content">
-            <div className="badge">🏗️ &nbsp;About Noor Infrastructure</div>
-
-            <h2>
-              Building Chennai Homes{' '}
-              <span className="gradient-text">Since 2014</span>
+        {/* Right — Text */}
+        <div className="about-text-side">
+          <div className="reveal" ref={textRef}>
+            <p className="eyebrow">About Us</p>
+            <h2 className="heading-section">
+              Building Chennai Homes<br />
+              <em style={{ fontStyle: 'italic', background: 'var(--clr-gold-grad)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Since 2014</em>
             </h2>
-
-            <p className="lead-text">
+            <p className="about-body">
               We are a Chennai-based construction company specialising in residential
               houses and small commercial shops. From foundation to finishing, we handle
-              every stage of your build — so you can relax and watch your dream come to life.
+              every stage — so you can relax and watch your dream come to life.
             </p>
-
-            <div className="about-features">
-              {features.map((f, i) => (
-                <div className="feature-item" key={i}>
-                  <div className="feature-icon-wrap">{f.icon}</div>
-                  <div className="feature-text">
-                    <strong>{f.title}</strong>
-                    <p>{f.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <button
-              className="btn-primary"
-              id="about-learn-more-btn"
-              onClick={() => document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Why Choose Us →
-            </button>
           </div>
 
+          <div className="about-features reveal-stagger" ref={featRef}>
+            {features.map((f, i) => (
+              <div className="about-feature" key={i}>
+                <div className="about-feature-icon">{f.icon}</div>
+                <div className="about-feature-text">
+                  <strong>{f.title}</strong>
+                  <p>{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="reveal" ref={useScrollReveal()}>
+            <button
+              className="btn-primary"
+              id="about-cta-btn"
+              onClick={() => document.getElementById('why-us')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <span>Why Choose Us</span>
+              <span>→</span>
+            </button>
+          </div>
         </div>
+
       </div>
     </section>
   )

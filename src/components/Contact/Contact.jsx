@@ -1,24 +1,25 @@
 import { useState } from 'react'
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './Contact.css'
 
 const contactMethods = [
   {
-    icon: '📍',
+    icon: '⬡',
     title: 'Office Address',
     info: 'No. 12, Gandhi Nagar, Tambaram West, Chennai – 600 045',
   },
   {
-    icon: '📞',
+    icon: '✦',
     title: 'Call / WhatsApp',
     info: '+91 98412 56789 (Mohammed Noor)',
   },
   {
-    icon: '✉️',
+    icon: '◈',
     title: 'Email',
     info: 'noorinfrastructure.chn@gmail.com',
   },
   {
-    icon: '⏰',
+    icon: '◇',
     title: 'We Work',
     info: 'Monday – Sunday, 8:00 AM – 8:00 PM',
   },
@@ -31,6 +32,10 @@ const initialForm = {
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
+
+  const headerRef = useScrollReveal()
+  const infoRef = useScrollReveal()
+  const formRef = useScrollReveal()
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -47,13 +52,14 @@ export default function Contact() {
       <div className="container">
 
         {/* Section header */}
-        <div className="section-header">
-          <div className="badge">📞 &nbsp;Get In Touch</div>
-          <h2>
-            Start Your <span className="gradient-text">Project</span> Today
+        <div className="section-header reveal" ref={headerRef}>
+          <p className="eyebrow">Get In Touch</p>
+          <h2 className="heading-section">
+            Start Your<br />
+            <em className="gold-text" style={{ fontStyle: 'italic' }}>Project Today</em>
           </h2>
-          <div className="divider-line"></div>
-          <p>
+          <div className="gold-rule"></div>
+          <p className="sub-text">
             Tell us about your house or shop project in Chennai — we'll call you back
             within a few hours with a free estimate.
           </p>
@@ -62,13 +68,13 @@ export default function Contact() {
         <div className="contact-grid">
 
           {/* Left — contact info */}
-          <div className="contact-info">
-            <div className="badge">📍 &nbsp;Find Us</div>
-            <h2>
-              Let's Build Your{' '}
-              <span className="gradient-text">Dream Space</span>
+          <div className="contact-info reveal" ref={infoRef}>
+            <p className="eyebrow">Find Us</p>
+            <h2 className="heading-section">
+              Let's Build Your<br />
+              <em className="gold-text" style={{ fontStyle: 'italic' }}>Dream Space</em>
             </h2>
-            <p className="lead-text">
+            <p className="why-body">
               We work across all major areas of Chennai. Call us or fill the form and
               our team will visit your site for a free consultation.
             </p>
@@ -87,14 +93,14 @@ export default function Contact() {
           </div>
 
           {/* Right — enquiry form */}
-          <div className="contact-form">
+          <div className="contact-form reveal" ref={formRef}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '60px 0' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '16px' }}>✅</div>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', marginBottom: '12px', color: 'var(--clr-white)' }}>
-                  We'll Call You Soon!
+                <div style={{ fontSize: '3rem', marginBottom: '16px', color: 'var(--clr-gold)' }}>✦</div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', marginBottom: '12px', color: 'var(--clr-white)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                  We'll Call You Soon
                 </h3>
-                <p style={{ color: 'var(--clr-gray-400)' }}>
+                <p style={{ color: 'var(--clr-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                   Thank you for contacting Noor Infrastructure. Our team will call you back within a few hours.
                 </p>
               </div>
@@ -159,7 +165,8 @@ export default function Contact() {
                   className="btn-primary form-submit"
                   id="contact-submit-btn"
                 >
-                  Send Free Enquiry →
+                  <span>Send Free Enquiry</span>
+                  <span>→</span>
                 </button>
               </form>
             )}
@@ -170,3 +177,4 @@ export default function Contact() {
     </section>
   )
 }
+

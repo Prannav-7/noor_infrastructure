@@ -1,23 +1,21 @@
 /* ============================================================
-   NAVBAR COMPONENT STYLES
+   NAVBAR — Luxury Transparent → Frosted-Glass on Scroll
    ============================================================ */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 22px 0;
-  transition: var(--transition-smooth);
+  padding: 28px 0;
+  transition: padding 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(5, 9, 26, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(245, 200, 66, 0.15);
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+  background: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.6);
 }
 
 .navbar-inner {
@@ -26,121 +24,113 @@
   justify-content: space-between;
 }
 
+/* ── Logo ── */
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.logo-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--clr-gold-gradient);
-  border-radius: 10px;
+.logo-monogram {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--clr-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1rem;
-  color: var(--clr-navy-900);
-  letter-spacing: -1px;
-  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--clr-gold);
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
 }
 
-.logo-text {
+.navbar-logo:hover .logo-monogram {
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+}
+
+.logo-text-group {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.logo-text .company-name {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.1rem;
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--clr-white);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   line-height: 1.2;
 }
 
-.logo-text .company-tag {
-  font-size: 0.62rem;
-  color: var(--clr-gold-400);
-  letter-spacing: 2px;
+.logo-sub {
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
+  color: var(--clr-gold);
   font-weight: 600;
   line-height: 1.2;
 }
 
+/* ── Nav Links ── */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 40px;
 }
 
 .nav-link {
   font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
   position: relative;
-  transition: var(--transition-smooth);
   cursor: pointer;
-  white-space: nowrap;
+  transition: color 0.3s ease;
+  padding-bottom: 2px;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--clr-gold-gradient);
-  border-radius: 1px;
-  transition: width 0.3s ease;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--clr-gold);
+  transition: width 0.35s var(--ease-out);
 }
 
-.nav-link:hover {
-  color: var(--clr-gold-400);
-}
+.nav-link:hover { color: var(--clr-gold); }
+.nav-link:hover::after { width: 100%; }
 
-.nav-link:hover::after {
-  width: 100%;
-}
+/* ── CTA ── */
+.navbar-cta { display: flex; align-items: center; }
 
-.navbar-cta {
-  display: flex;
-  align-items: center;
-}
-
+/* ── Mobile Hamburger ── */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
   padding: 4px;
 }
 
 .mobile-menu-toggle span {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 26px; height: 1px;
   background: var(--clr-white);
-  border-radius: 2px;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
 }
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
-  .navbar-links,
-  .navbar-cta {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
+@media (max-width: 900px) {
+  .navbar-links, .navbar-cta { display: none; }
+  .mobile-menu-toggle { display: flex; }
 }

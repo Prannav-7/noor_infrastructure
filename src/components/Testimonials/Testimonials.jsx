@@ -1,3 +1,4 @@
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './Testimonials.css'
 
 /* ── Data: edit this array to add/remove client reviews ── */
@@ -23,23 +24,26 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const headerRef = useScrollReveal()
+  const gridRef = useScrollReveal()
+
   return (
     <section className="testimonials section" id="testimonials">
       <div className="container">
-        <div className="section-header">
-          <div className="badge">💬 &nbsp;Testimonials</div>
-          <h2>
-            What Chennai Families{' '}
-            <span className="gradient-text">Say About Us</span>
+        <div className="section-header reveal" ref={headerRef}>
+          <p className="eyebrow">Testimonials</p>
+          <h2 className="heading-section">
+            What Chennai Families<br />
+            <em className="gold-text" style={{ fontStyle: 'italic' }}>Say About Us</em>
           </h2>
-          <div className="divider-line"></div>
-          <p>Real reviews from real homeowners and shop owners across Chennai.</p>
+          <div className="gold-rule"></div>
+          <p className="sub-text">Real reviews from real homeowners and shop owners across Chennai.</p>
         </div>
 
-        <div className="testimonials-grid">
+        <div className="testimonials-grid reveal-stagger" ref={gridRef}>
           {testimonials.map((t, i) => (
             <div className="testimonial-card" key={i} id={`testimonial-${i + 1}`}>
-              <div className="stars">{'⭐'.repeat(5)}</div>
+              <div className="stars">{'★'.repeat(5)}</div>
               <span className="quote-icon">"</span>
               <p className="testimonial-text">{t.quote}</p>
               <div className="testimonial-author">
@@ -56,3 +60,4 @@ export default function Testimonials() {
     </section>
   )
 }
+

@@ -1,8 +1,8 @@
 /* ============================================================
-   TESTIMONIALS SECTION STYLES
+   TESTIMONIALS SECTION — Client Reviews Grid
    ============================================================ */
 .testimonials {
-  background: var(--clr-navy-800);
+  background: var(--clr-bg);
   position: relative;
   overflow: hidden;
 }
@@ -10,30 +10,29 @@
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 .testimonial-card {
-  background: linear-gradient(145deg, rgba(15, 26, 62, 0.55), rgba(10, 17, 40, 0.75));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
-  padding: 32px 28px;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  padding: 40px 32px;
   position: relative;
-  transition: var(--transition-smooth);
+  transition: border-color 0.4s var(--ease-out), transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
   display: flex;
   flex-direction: column;
 }
 
 .testimonial-card:hover {
-  border-color: rgba(245, 200, 66, 0.18);
-  transform: translateY(-5px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  border-color: rgba(201, 168, 76, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.6);
 }
 
 .quote-icon {
   font-size: 2.8rem;
   line-height: 1;
-  background: var(--clr-gold-gradient);
+  background: var(--clr-gold-grad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -43,10 +42,10 @@
 }
 
 .testimonial-text {
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  color: var(--clr-muted);
   line-height: 1.8;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   font-style: italic;
   flex: 1;
 }
@@ -54,22 +53,23 @@
 .testimonial-author {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin-top: auto;
 }
 
 .author-avatar {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--clr-gold-gradient);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.9rem;
-  color: var(--clr-navy-900);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--clr-gold);
   flex-shrink: 0;
 }
 
@@ -84,23 +84,25 @@
 }
 
 .author-info span {
-  font-size: 0.78rem;
-  color: var(--clr-gold-400);
+  font-size: 0.74rem;
+  color: var(--clr-gold);
 }
 
 .stars {
   position: absolute;
-  top: 28px;
-  right: 24px;
+  top: 36px;
+  right: 32px;
   display: flex;
   gap: 2px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--clr-gold);
 }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
@@ -109,3 +111,4 @@
     grid-template-columns: 1fr;
   }
 }
+

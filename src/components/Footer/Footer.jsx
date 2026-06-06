@@ -17,7 +17,12 @@ const serviceLinks = [
   'Extensions & Add-ons',
 ]
 
-const socialIcons = ['📘', '📷', '📞', '💬']
+const socialLinks = [
+  { label: 'Fb', aria: 'Facebook',  url: '#' },
+  { label: 'In', aria: 'Instagram', url: '#' },
+  { label: 'Wa', aria: 'WhatsApp',  url: '#' },
+  { label: 'Ph', aria: 'Call Us',   url: '#' },
+]
 
 export default function Footer() {
   const scrollTo = (id) => {
@@ -33,11 +38,11 @@ export default function Footer() {
 
             {/* Brand column */}
             <div className="footer-brand">
-              <div className="logo-wrap navbar-logo">
-                <div className="logo-icon">NI</div>
-                <div className="logo-text">
-                  <span className="company-name">Noor Infrastructure</span>
-                  <span className="company-tag">Chennai, Tamil Nadu</span>
+              <div className="navbar-logo" onClick={() => scrollTo('hero')}>
+                <div className="logo-monogram">NI</div>
+                <div className="logo-text-group">
+                  <span className="logo-name">Noor Infrastructure</span>
+                  <span className="logo-sub">Chennai · Est. 2014</span>
                 </div>
               </div>
               <p>
@@ -46,14 +51,14 @@ export default function Footer() {
                 skill, and care.
               </p>
               <div className="social-links">
-                {socialIcons.map((icon, i) => (
+                {socialLinks.map((s, i) => (
                   <a
                     className="social-link"
                     key={i}
-                    href="#"
-                    aria-label={`Social link ${i + 1}`}
+                    href={s.url}
+                    aria-label={s.aria}
                   >
-                    {icon}
+                    {s.label}
                   </a>
                 ))}
               </div>
@@ -69,7 +74,7 @@ export default function Footer() {
                     onClick={() => scrollTo(link.id)}
                     id={`footer-link-${link.id}`}
                   >
-                    → {link.label}
+                    <span>✦</span> {link.label}
                   </a>
                 ))}
               </div>
@@ -85,7 +90,7 @@ export default function Footer() {
                     onClick={() => scrollTo('services')}
                     id={`footer-service-${s.replace(/\s+/g, '-').toLowerCase()}`}
                   >
-                    → {s}
+                    <span>✦</span> {s}
                   </a>
                 ))}
               </div>
@@ -95,10 +100,10 @@ export default function Footer() {
             <div className="footer-col">
               <h4>Contact</h4>
               <div className="footer-links">
-                <a>📍 Tambaram West, Chennai</a>
-                <a>📞 +91 98412 56789</a>
-                <a>💬 WhatsApp Us</a>
-                <a>⏰ Mon–Sun, 8 AM – 8 PM</a>
+                <a><span>✦</span> Tambaram West, Chennai</a>
+                <a><span>✦</span> +91 98412 56789</a>
+                <a><span>✦</span> WhatsApp Us</a>
+                <a><span>✦</span> Mon–Sun, 8 AM – 8 PM</a>
               </div>
             </div>
 
@@ -119,3 +124,4 @@ export default function Footer() {
     </footer>
   )
 }
+
